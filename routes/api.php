@@ -19,3 +19,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource("books","Bookcontroller");
+Route::get('/author', 'AuthorController@index');
+
+
+Route::post('/author/create', 'AuthorController@store');
+
+
+Route::post('/author/update/{id}', 'AuthorController@update');
+
+Route::delete('/author/delete/{id}', 'AuthorController@destroy');
